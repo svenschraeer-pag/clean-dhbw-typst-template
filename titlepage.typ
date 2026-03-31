@@ -44,12 +44,12 @@
     place(
       top + left,
       dy: -4 * page-grid,
-      box(logo-left, height: 3 * page-grid),
+      box(align(horizon + center, logo-left), height: 3 * page-grid),
     )
     place(
       top + right,
       dy: -4 * page-grid,
-      box(logo-right, height: 3 * page-grid),
+      box(align(horizon + center, logo-right), height: 3 * page-grid),
     )
   }
 
