@@ -18,9 +18,9 @@
     declaration-of-authorship-content
   } else {
     if (authors.len() == 1) {
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE)
+      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE.at(language))
     } else {
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL)
+      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL.at(language))
     }
   }
 
@@ -36,7 +36,11 @@
   } else {
     let authors-by-city = authors.map(author => author.company.city).dedup()
 
-    text(authors-by-city.join(", ", last: AND.at(language)) + [ ] + end-date.display(date-format))
+    text(
+      authors-by-city.join(", ", last: AND.at(language))
+        + [ ]
+        + end-date.display(date-format),
+    )
   }
 
   v(1em)
@@ -46,11 +50,13 @@
       gutter: 20pt,
       ..authors.map(author => {
         rect(
-          width: 80%, height: 3.5em, inset: 1pt,
+          width: 80%,
+          height: 3.5em,
+          inset: 1pt,
           stroke: (top: none, y: none, bottom: black),
           if author.keys().contains("signature") {
             box(author.signature)
-          }
+          },
         )
         author.name
       })
@@ -58,11 +64,13 @@
   } else {
     for author in authors {
       rect(
-        width: 40%, height: 4em, inset: 1pt,
+        width: 40%,
+        height: 4em,
+        inset: 1pt,
         stroke: (top: none, y: none, bottom: black),
         if author.keys().contains("signature") {
-            box(author.signature)
-        }
+          box(author.signature)
+        },
       )
       author.name
     }

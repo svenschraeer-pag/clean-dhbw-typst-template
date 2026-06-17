@@ -33,9 +33,15 @@
   "en": "Declaration of Authorship",
 )
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlich wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = (
+  "de": "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde.",
+  "en": "I hereby declare that I have independently written the present work and have used no other sources and aids than those stated, and that this work has not been submitted to any other examination with the same or comparable content and has not been published to date.",
+)
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlich wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = (
+  "de": "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde.",
+  "en": "We hereby declare that we have independently written the present work and have used no other sources and aids than those stated, and that this work has not been submitted to any other examination with the same or comparable content and has not been published to date.",
+)
 
 #let AI_USAGE_SECTION_TITLE = (
   "de": "Verwendung von KI",
