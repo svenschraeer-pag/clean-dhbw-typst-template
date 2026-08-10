@@ -68,7 +68,10 @@
   }
 
   // course of studies
-  text(TITLEPAGE_SECTION_B.at(language) + authors.map(author => author.course-of-studies).dedup().join(" | "))
+  text(
+    TITLEPAGE_SECTION_B.at(language)
+      + authors.map(author => author.course-of-studies).dedup().join(" | "),
+  )
   v(0.25 * page-grid)
 
   // university
@@ -107,7 +110,17 @@
       align: (right, left),
 
       // submission date
-      text(weight: "bold", fill: luma(80), TITLEPAGE_DATE.at(language)),
+      text(
+        weight: "bold",
+        fill: luma(80),
+        (
+          if (type(date) == datetime) {
+            TITLEPAGE_DATE
+          } else {
+            TITLEPAGE_DATE_START_END
+          }
+        ).at(language),
+      ),
       text(
         if (type(date) == datetime) {
           date.display(date-format)
@@ -117,7 +130,10 @@
       ),
 
       // students
-      align(text(weight: "bold", fill: luma(80), TITLEPAGE_STUDENT_ID.at(language)), top),
+      align(
+        text(weight: "bold", fill: luma(80), TITLEPAGE_STUDENT_ID.at(language)),
+        top,
+      ),
       stack(
         dir: ttb,
         for author in authors {
@@ -129,7 +145,10 @@
       // company
       ..if (not at-university) {
         (
-          align(text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY.at(language)), top),
+          align(
+            text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY.at(language)),
+            top,
+          ),
           stack(
             dir: ttb,
             for author in authors {
@@ -137,7 +156,9 @@
 
               // company name
               if (
-                "name" in author.company and author.company.name != none and author.company.name != ""
+                "name" in author.company
+                  and author.company.name != none
+                  and author.company.name != ""
               ) {
                 company-address += author.company.name
               } else {
@@ -150,14 +171,18 @@
 
               // company address (optional)
               if (
-                "post-code" in author.company and author.company.post-code != none and author.company.post-code != ""
+                "post-code" in author.company
+                  and author.company.post-code != none
+                  and author.company.post-code != ""
               ) {
                 company-address += text([, #author.company.post-code])
               }
 
               // company city
               if (
-                "city" in author.company and author.company.city != none and author.company.city != ""
+                "city" in author.company
+                  and author.company.city != none
+                  and author.company.city != ""
               ) {
                 company-address += text([, #author.company.city])
               } else {
@@ -170,7 +195,9 @@
 
               // company country (optional)
               if (
-                "country" in author.company and author.company.country != none and author.company.country != ""
+                "country" in author.company
+                  and author.company.country != none
+                  and author.company.country != ""
               ) {
                 company-address += text([, #author.company.country])
               }
@@ -185,7 +212,11 @@
       // company supervisor
       ..if ("company" in supervisor) {
         (
-          text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY_SUPERVISOR.at(language)),
+          text(
+            weight: "bold",
+            fill: luma(80),
+            TITLEPAGE_COMPANY_SUPERVISOR.at(language),
+          ),
           if (type(supervisor.company) == str) { text(supervisor.company) },
         )
       },
@@ -211,8 +242,11 @@
           grid.cell(
             colspan: 2,
             align: center,
-            text(weight: "regular", fill: rgb(226, 0, 26),
-            CONFIDENTIALITY_MARKER.at(language))
+            text(
+              weight: "regular",
+              fill: rgb(226, 0, 26),
+              CONFIDENTIALITY_MARKER.at(language),
+            ),
           ),
         )
       },

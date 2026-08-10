@@ -92,7 +92,6 @@
   let h4-size = 11pt
   let page-grid = 16pt // vertical spacing on all pages
 
-
   // ---------- Basic Document Settings ---------------------------------------
 
   set document(title: title, author: authors.map(author => author.name))
@@ -160,7 +159,7 @@
   set par(
     spacing: page-grid,
     leading: page-grid - body-size,
-    justify: true,
+    justify: false,
   )
 
   set page(
@@ -183,7 +182,6 @@
     ),
     header-ascent: page-grid,
   )
-
 
   // ========== FRONTMATTER ========================================
 
@@ -250,7 +248,6 @@
   show table: set text(font: heading-font, size: body-size)
   show table.cell.where(y: 0): set text(weight: "bold")
 
-
   // ---------- Heading Format (Part II: H1-H4) ---------------------------------------
 
   set heading(numbering: "1.1.1")
@@ -302,7 +299,6 @@
   // ---------- Body Text ---------------------------------------
 
   body
-
 
   // ========== APPENDIX ========================================
 

@@ -8,6 +8,11 @@
   "en": "Submitted on:",
 )
 
+#let TITLEPAGE_DATE_START_END = (
+  "de": "Projekt Zeitraum:",
+  "en": "Project Period:",
+)
+
 #let TITLEPAGE_STUDENT_ID = (
   "de": "Matrikelnummer, Kurs:",
   "en": "Student ID, Course:",
