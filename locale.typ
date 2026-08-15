@@ -39,8 +39,8 @@
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = (
-  "de": "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde.",
-  "en": "I hereby declare that I have independently written the present work and have used no other sources and aids than those stated, and that this work has not been submitted to any other examination with the same or comparable content and has not been published to date.",
+  "de": "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde. Ich habe bei der Erstellung der Arbeit KI-Werkzeuge eingesetzt. Dies habe ich an den entsprechenden Stellen der Arbeit kenntlich gemacht.",
+  "en": "I hereby declare that I have independently written the present work and have used no other sources and aids than those stated, and that this work has not been submitted to any other examination with the same or comparable content and has not been published to date. I have used AI tools in creating this work. I have marked this at the corresponding places in the work.",
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = (
