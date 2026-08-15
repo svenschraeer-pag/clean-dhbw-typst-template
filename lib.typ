@@ -118,6 +118,13 @@
   // show links in dark blue
   show link: set text(fill: blue.darken(40%))
 
+  // make text referenceable
+  show ref: it => {
+    let el = it.element
+    if el == none or el.func() != text { return it }
+    link(el.location(), el.text)
+  }
+
   // ========== TITLEPAGE ========================================
 
   if (titlepage-content != none) {
@@ -247,6 +254,8 @@
   set table(stroke: (x: none, y: 0.5pt))
   show table: set text(font: heading-font, size: body-size)
   show table.cell.where(y: 0): set text(weight: "bold")
+
+  show figure: set block(breakable: true)
 
   // ---------- Heading Format (Part II: H1-H4) ---------------------------------------
 
