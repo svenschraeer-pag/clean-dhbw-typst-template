@@ -333,6 +333,22 @@
     print-glossary(glossary)
   }
 
+  // ---------- List of Tables / figures
+  show outline: it => {
+    show heading: set heading(numbering: "A.1")
+    if query(it.target) != () { it }
+  }
+
+  outline(
+    title: LIST_OF_TABLES.at(language),
+    target: figure.where(kind: table),
+  )
+
+  outline(
+    title: LIST_OF_FIGURES.at(language),
+    target: figure.where(kind: image),
+  )
+
   // ---------- Appendix (other contents) ---------------------------------------
 
   if (appendix != none) {

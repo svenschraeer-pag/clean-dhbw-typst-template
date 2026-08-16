@@ -108,6 +108,16 @@
   "en": "References",
 )
 
+#let LIST_OF_TABLES = (
+  "de": "Tabellenverzeichnis",
+  "en": "List of Tables",
+)
+#let LIST_OF_FIGURES = (
+  "de": "Abbildungsverzeichnis",
+  "en": "List of Figures",
+)
+
+
 #let APPENDIX = (
   "de": "Anhang",
   "en": "Appendix",
