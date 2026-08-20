@@ -255,7 +255,7 @@
   show table: set text(font: heading-font, size: body-size)
   show table.cell.where(y: 0): set text(weight: "bold")
 
-  show figure: set block(breakable: true)
+  show figure.where(kind: table): set block(breakable: true)
 
   // ---------- Heading Format (Part II: H1-H4) ---------------------------------------
 
