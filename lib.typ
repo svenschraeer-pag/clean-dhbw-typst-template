@@ -28,6 +28,7 @@
   abstract: none,
   appendix: none,
   confidentiality-statement-content: none,
+  confidentiality-statement-page: none,
   declaration-of-authorship-content: none,
   ai-usage-section-content: none,
   titlepage-content: none,
@@ -151,6 +152,17 @@
       page-grid,
     )
   }
+
+  if (
+    show-confidentiality-statement
+      and confidentiality-statement-page != none
+      and type(confidentiality-statement-page) == content
+      and confidentiality-statement-page.func() == image
+  ) {
+    confidentiality-statement-page
+    pagebreak()
+  }
+
   counter(page).update(1)
 
   // ---------- Page Setup ---------------------------------------
@@ -204,6 +216,44 @@
   if (show-abstract and abstract != none) {
     heading(level: 1, numbering: none, outlined: false, ABSTRACT.at(language))
     text(abstract)
+    pagebreak()
+  }
+
+  // ---------- Confidentiality Statement ---------------------------------------
+
+  if (
+    not at-university
+      and show-confidentiality-statement
+      and confidentiality-statement-page == none
+  ) {
+    confidentiality-statement(
+      authors,
+      title,
+      confidentiality-statement-content,
+      university,
+      university-location,
+      date,
+      language,
+      many-authors,
+      date-format,
+    )
+    pagebreak()
+  }
+
+  // ---------- Declaration Of Authorship ---------------------------------------
+
+  if (show-declaration-of-authorship) {
+    declaration-of-authorship(
+      authors,
+      title,
+      declaration-of-authorship-content,
+      date,
+      language,
+      many-authors,
+      at-university,
+      city,
+      date-format,
+    )
     pagebreak()
   }
 
@@ -360,44 +410,12 @@
 
   set heading(numbering: it => h(-18pt) + "", outlined: false)
 
-  // ---------- Confidentiality Statement ---------------------------------------
-
-  if (not at-university and show-confidentiality-statement) {
-    confidentiality-statement(
-      authors,
-      title,
-      confidentiality-statement-content,
-      university,
-      university-location,
-      date,
-      language,
-      many-authors,
-      date-format,
-    )
-  }
-
   // ---------- AI Usage Section ---------------------------------------
 
   if (show-ai-usage-section) {
     ai-usage-section(
       ai-usage-section-content,
       language,
-    )
-  }
-
-  // ---------- Declaration Of Authorship ---------------------------------------
-
-  if (show-declaration-of-authorship) {
-    declaration-of-authorship(
-      authors,
-      title,
-      declaration-of-authorship-content,
-      date,
-      language,
-      many-authors,
-      at-university,
-      city,
-      date-format,
     )
   }
 }
