@@ -41,6 +41,7 @@
   date-format: "[day].[month].[year]",
   bibliography: none,
   glossary: none,
+  glossary-show-all: false,
   bib-style: "ieee",
   math-numbering: "(1)",
   logo-left: image("dhbw.svg"),
@@ -380,7 +381,7 @@
 
   if (glossary != none) {
     heading(level: 1, GLOSSARY.at(language))
-    print-glossary(glossary)
+    print-glossary(glossary, show-all: glossary-show-all)
   }
 
   // ---------- List of Tables / figures
