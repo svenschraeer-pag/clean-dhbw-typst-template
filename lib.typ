@@ -345,7 +345,12 @@
         )
       } else {
         v(2 * page-grid)
-        text(size: 2 * page-grid, counter(heading).display() + h(0.5em) + it.body) // appendix
+        text(
+          size: 2 * page-grid,
+          top-edge: 0.75em,
+          bottom-edge: -0.25em,
+          counter(heading).display() + h(0.5em) + it.body,
+        ) // appendix
       }
     }
   }
