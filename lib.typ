@@ -303,6 +303,7 @@
   // ---------- Table Format ---------------------------------------
 
   set table(stroke: (x: none, y: 0.5pt))
+  show table: set par(justify: false)
   show table: set text(font: heading-font, size: body-size)
   show table.cell.where(y: 0): set text(weight: "bold")
 
