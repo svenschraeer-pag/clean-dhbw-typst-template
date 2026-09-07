@@ -380,6 +380,7 @@
       title: REFERENCES.at(language),
       style: bib-style,
     )
+    set par(justify: false)
     bibliography
   }
 
