@@ -27,7 +27,7 @@
   let end-date = if (type(date) == datetime) {
     date
   } else {
-    date.at(1)
+    date.last()
   }
 
   v(2em)
