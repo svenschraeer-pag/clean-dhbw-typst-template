@@ -179,7 +179,7 @@
   set par(
     spacing: page-grid,
     leading: page-grid - body-size,
-    justify: false,
+    justify: true,
   )
 
   set page(
