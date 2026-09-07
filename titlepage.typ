@@ -107,7 +107,7 @@
       columns: (auto, auto),
       row-gutter: 1em,
       column-gutter: 1em,
-      align: (right, left),
+      align: (top + right, left),
 
       // submission date
       text(
@@ -126,6 +126,14 @@
           date.display(date-format)
         } else {
           date.at(0).display(date-format) + [ -- ] + date.at(1).display(date-format)
+          if (date.at(2) != none) {
+            (
+              [, #linebreak()]
+                + date.at(2).display(date-format)
+                + [ -- ]
+                + date.at(3).display(date-format)
+            )
+          }
         },
       ),
 

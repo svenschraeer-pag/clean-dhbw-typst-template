@@ -36,7 +36,6 @@
     )
   }
 
-
   // Check type of boolean attributes
 
   let boolean-attributes = (
@@ -59,7 +58,6 @@
       )
     }
   }
-
 
   // Check type and content (some shouldn't be empty) of string attributes
 
@@ -102,7 +100,6 @@
     }
   }
 
-
   // Check validity of confidentialty-marker attributes
 
   if (type(confidentiality-marker) != none) {
@@ -116,7 +113,6 @@
       )
     }
   }
-
 
   // Check type of attributes containing `length`-values
 
@@ -158,7 +154,6 @@
       )
     }
   }
-
 
   // Check consistency of all attributes related to `authors`
 
@@ -261,7 +256,6 @@
     }
   }
 
-
   // Check allowed languages
 
   if (language != "en" and language != "de") {
@@ -270,23 +264,23 @@
     )
   }
 
-
   // Check correctness of `date`
 
   if (
     type(date) != datetime
       and (
         type(date) != array
-          or date.len() != 2
+          or date.len() not in (2, 4)
           or type(date.at(0)) != datetime
           or type(date.at(1)) != datetime
+          or type(date.at(2)) != datetime
+          or type(date.at(3)) != datetime
       )
   ) {
     panic(
       "Date is invalid. Specify a datetime in the 'date' attribute of the template to display a specific date or use a array containing two datetime elements to display a date range.",
     )
   }
-
 
   // Checkt type and content of image-attributes
 
@@ -307,12 +301,10 @@
     }
   }
 
-
   // Check type of `glossary`
   if (glossary != none and type(glossary) != array) {
     panic("Type of `glossary` is invalid. It must be an array of arrays")
   }
-
 
   // Check availability of `bibliography`
 
@@ -321,7 +313,6 @@
       "Bibliography is invalid. Specify a bibliography in the 'bibliography' attribute of the template.",
     )
   }
-
 
   // Check correctness of `supervisor`
 
@@ -342,7 +333,6 @@
       "Supervisor(s) is/are invalid. Specify a supervisor either for the company and/or the university in the 'supervisor' attribute of the template.",
     )
   }
-
 
   // Check type and content (not empty) of string array attributes
 
